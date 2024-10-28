@@ -1,0 +1,286 @@
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* S'assurer que le contenu prend toute la hauteur */
+    background-color: #02a3c0;
+}
+
+header {
+    backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0b0349b2;
+    color: white;
+    width: 97%; /* Pour couvrir toute la largeur */
+    position: fixed; /* Fixer en position basse */
+    bottom: 0; /* Aligné en bas */
+    left: 0; /* Début du côté gauche */
+    z-index: 1000; /* Assurez-vous que l'en-tête reste au-dessus du contenu */
+}
+
+main {
+    flex: 1; /* Permet au contenu de s'étendre pour occuper l'espace disponible */
+    padding-bottom: 80px; /* Ajustez pour éviter que le contenu ne se cache derrière le header */
+}
+
+.iconTo img {
+    width: 50px;
+    height: auto;
+    cursor: pointer; /* Changer le curseur en forme de main */
+}
+
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Masqué par défaut, visible sur mobile */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+nav a .menuEffet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: #f04;
+}
+
+.menuEffet {
+    font-family: 'Protest Strike';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f04;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0);
+    z-index: -1;
+    opacity: 1;
+}
+
+nav a:hover .menuEffet {
+    width: 100%;
+    transform: scale(1);
+}
+
+.bt_buy a {
+    color: white;
+    text-decoration: none;
+    background-color: #f04;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.bt_buy:hover {
+    transform: scale(1.2);
+}
+
+.bt_buy a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: #f04;
+    padding: 15px 30px;
+    border-radius: 5px;
+    width: auto;
+    position: relative;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bt_buy a .menuEffet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+}
+
+.bt_buy a:hover .menuEffet {
+    width: 100%;
+}
+@media (min-width: 1290px) {
+    header {
+        backdrop-filter: blur(0px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #0b0349;
+        color: white;
+        width: 98%; /* Pour couvrir toute la largeur */
+        position: fixed; /* Fixer en position basse */
+        bottom: 0; /* Aligné en bas */
+        left: 0; /* Début du côté gauche */
+        z-index: 1000; /* Assurez-vous que l'en-tête reste au-dessus du contenu */
+    }
+}
+@media (max-width: 768px) {
+    header {
+        backdrop-filter: blur(0px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #0b0349;
+        color: white;
+        width: 95%; /* Pour couvrir toute la largeur */
+        position: fixed; /* Fixer en position basse */
+        bottom: 0; /* Aligné en bas */
+        left: 0; /* Début du côté gauche */
+        z-index: 1000; /* Assurez-vous que l'en-tête reste au-dessus du contenu */
+    }
+    
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        align-items: center;
+        bottom: 60px; /* Juste au-dessus du header */
+        right: 0;
+        background-color: #0b0349;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        transition: height 0.3s ease-in-out;
+    }
+
+    nav.open {
+        height: auto;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+    }
+}
+.iconTo {
+    padding: 6px;
+    color: black;
+    box-shadow: 2px 2px 5px #000000;
+    font-size: bold;
+    background-color: aliceblue;
+    cursor: pointer; /* Changer le curseur en forme de main */
+}
+
+.windowMenu {
+    position: fixed;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    bottom: 83px; /* Juste au-dessus du header */
+    left: -40%; /* Ajuster pour que le menu disparaisse en douceur */
+    background-color: #0b034983;
+    width: 40%;
+    max-height: 0; /* Utiliser max-height pour la transition en hauteur */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, left 0.5s ease-in-out;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    z-index: 0;
+}
+.window{
+    padding: 2px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    width: 60%;
+    background-color: #dbe1e7;
+    color: black;
+
+}
+.window p{
+
+    color: black;
+}
+.wid{
+    width: 40%;
+}
+
+.windowMenu.open {
+    max-height: 500px; /* Ajustez la hauteur maximale en fonction du contenu */
+    left: 0;
+}
+
+.windowMenu .bt {
+    width: 100%;
+}
+.window .bt:hover{
+    background-color: rgba(255, 255, 255, 0.568);
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+.windowMenu .bt a{
+    display: flex;/* Utilise flexbox pour aligner les éléments */
+    flex-direction: row;
+    align-items: center; /* Aligne verticalement */   
+    text-decoration: none; /* Enlève le soulignement du lien */
+    color: aliceblue; /* Garde la couleur du texte */
+    padding: 7px; /* Ajustez l'espacement si nécessaire */
+    height: 100%;
+    gap: 10px;
+}
+
+.bt{
+    padding: 1px;
+    width: 100px;
+    transition: background-color 0.3s ease;
+}
+.bt:hover, .iconTo:hover{
+    background-color: rgba(255, 255, 255, 0.089);
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+.bt a img{
+    width: 40px;
+}
+
+
+
+.v .bt a {
+    display: flex; /* Utilise flexbox pour aligner les éléments */
+    flex-direction: column;
+    align-items: center; /* Aligne verticalement */
+    justify-content: center; /* Aligne horizontalement */
+    justify-items: center;
+    text-decoration: none; /* Enlève le soulignement du lien */
+    color: aliceblue; /* Garde la couleur du texte */
+    padding: 7px; /* Ajustez l'espacement si nécessaire */
+    height: 100%;
+}
+
+section {
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Crée des colonnes flexibles */
+     /* Crée des colonnes flexibles */
+    gap: 10px; /* Espace entre les éléments */
+}
+
