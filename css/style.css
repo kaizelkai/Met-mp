@@ -134,6 +134,12 @@ nav a:hover .menuEffet {
         left: 0; /* Début du côté gauche */
         z-index: 1000; /* Assurez-vous que l'en-tête reste au-dessus du contenu */
     }
+    
+}
+@media(min-width:768px){
+    .windowMenu {
+        width: 40%;
+    }
 }
 @media (max-width: 768px) {
     header {
@@ -179,30 +185,42 @@ nav a:hover .menuEffet {
         text-align: center;
         width: 100%;
     }
+    .windowMenu {
+        width: 95%;
+    }
 }
 .iconTo {
-    padding: 6px;
+    width: 60px;
+    justify-content: center;
+    justify-items: center;
+    padding: 3px;
     color: black;
     box-shadow: 2px 2px 5px #000000;
     font-size: bold;
     background-color: aliceblue;
     cursor: pointer; /* Changer le curseur en forme de main */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
+.iconTo:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px #18aded;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 .windowMenu {
     position: fixed;
     align-items: center;
     display: flex;
     flex-direction: row;
-    bottom: 83px; /* Juste au-dessus du header */
+    bottom: 77px; /* Juste au-dessus du header */
     left: -40%; /* Ajuster pour que le menu disparaisse en douceur */
     background-color: #0b034983;
-    width: 40%;
+    
     max-height: 0; /* Utiliser max-height pour la transition en hauteur */
     overflow: hidden;
     transition: max-height 0.5s ease-in-out, left 0.5s ease-in-out;
     border: 1px solid #000000;
-    border-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     z-index: 0;
 }
 .window{
@@ -228,7 +246,7 @@ nav a:hover .menuEffet {
     left: 0;
 }
 
-.windowMenu .bt {
+.windowMenu .bt{
     width: 100%;
 }
 .window .bt:hover{
@@ -236,7 +254,7 @@ nav a:hover .menuEffet {
     transition: background-color 0.3s ease;
     border-radius: 5px;
 }
-.windowMenu .bt a{
+.windowMenu .bt a, .windowMenu .bt1{
     display: flex;/* Utilise flexbox pour aligner les éléments */
     flex-direction: row;
     align-items: center; /* Aligne verticalement */   
@@ -247,23 +265,24 @@ nav a:hover .menuEffet {
     gap: 10px;
 }
 
-.bt{
+.bt, .bt1{
     padding: 1px;
     width: 100px;
     transition: background-color 0.3s ease;
 }
-.bt:hover, .iconTo:hover{
+
+.bt:hover{
     background-color: rgba(255, 255, 255, 0.089);
     transition: background-color 0.3s ease;
     border-radius: 5px;
 }
-.bt a img{
+.bt a img, .bt1 img{
     width: 40px;
 }
 
 
 
-.v .bt a {
+.v .bt a, .v .bt1{
     display: flex; /* Utilise flexbox pour aligner les éléments */
     flex-direction: column;
     align-items: center; /* Aligne verticalement */
@@ -284,3 +303,13 @@ section {
     gap: 10px; /* Espace entre les éléments */
 }
 
+.user{
+    background-color: #2f2f2f51;
+    margin-right: 5px;
+    width: 95%;
+    font-weight: bold;
+    border-bottom: 2px solid #0950ba;
+}
+.user img{
+    border-radius: 100%;
+}
